@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class QuizApp {
+
+    public static void main(String[] args) {
+        String[] questions = {
+            "What is the capital of France?",
+            "Which planet is known as the Red Planet?",
+            "What is the largest mammal in the world?"
+        };
+        String[] correctAnswers = {
+            "Paris",
+            "Mars",
+            "Blue Whale"
+        };
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println("Question " + (i + 1) + ": " + questions[i]);
+            String userAnswer = scanner.nextLine();
+
+            if (userAnswer.equalsIgnoreCase(correctAnswers[i])) {
+                System.out.println("Correct!\n");
+            } else {
+                System.out.println("Incorrect. The correct answer is: " + correctAnswers[i] + "\n");
+            }
+        }
+        scanner.close();
+    }
+}
